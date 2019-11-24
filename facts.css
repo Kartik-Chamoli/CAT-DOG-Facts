@@ -1,0 +1,234 @@
+html{
+	height: 100%;
+}
+
+nav{
+	display: flex;
+}
+
+nav img{
+	padding: 10px;
+}
+
+.nav-link{
+	align-self: flex-start;  
+}
+
+.nav-link img:hover{
+	transform: scale(1.5);
+	cursor: pointer;
+}
+
+#active{
+width:60px;
+height:60px;
+display: inline-block;
+border-bottom: 2px solid #000000;
+box-shadow: 0px 2px 4px 4px #222222;
+background-color: rgb(255, 251, 0);
+}
+
+#active:hover{
+transform: scale(1);
+}
+
+h1{
+	flex-grow: 1;
+	text-transform: uppercase;
+	text-align: center;
+	font-size:calc(20px + 1.5vw);
+	letter-spacing: 2px;
+	margin-left: 15%; 
+	color: rgb(0, 0, 0);
+	font-family: 'Varela Round', sans-serif;
+	padding: 0px;
+}
+
+ body{
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+	background-color: #7f53ac;
+	background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+	
+}
+
+#facts-placeholder{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.fact-card {
+	background-color: transparent;
+	width: 300px;
+	height: 300px;
+	perspective: 900px;
+	margin-top:1.5vw;
+  }
+  
+  .fact-card-in{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .fact-card:hover .fact-card-in{
+	transform: rotateY(180deg);
+  }
+  
+  .fact-card-front, .fact-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+  }
+  
+
+  .fact-card-back {
+	overflow-y: auto;
+	box-sizing: border-box;
+	border:10px double rgb(65, 0, 117);
+	background: rgb(232,175,241);
+	background: linear-gradient(143deg, rgba(232,175,241,1) 3%, rgba(253,156,255,1) 35%, rgba(239,197,252,1) 55%, rgba(125,237,229,1) 80%);	color: white;
+	transform: rotateY(180deg);
+  }
+
+  .fact-card-back h1{
+	text-align: center;
+	color: black;
+	margin-left: 1%;
+  }
+
+  .fact-card-back p{
+
+	  font-family: 'Dancing Script', cursive;
+	  color:rgb(16, 0, 105);
+	  font-weight: bold;
+	  font-size: 30px;
+  }
+#loader{
+    margin-top:14%;
+}
+
+@keyframes move-pet {
+	from {
+	  transform: rotate(0deg);
+	  
+	}
+  
+	to {
+	  transform: rotate(360deg);
+	  
+	}
+  }
+  
+@keyframes text-animate {
+	from{
+		font-size: calc(10px + 1vw);
+		color:blueviolet;
+	}
+
+	to {
+		font-size: calc(10px + 1.5vw);
+		color:rgb(11, 67, 102);
+	}
+}  
+
+#loader-text{
+	font-weight: 400;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	animation-timing-function: ease;
+	animation-duration: 1.3s;
+	animation-name: text-animate;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-play-state:running;   
+}
+
+#loader-img{
+    margin-left: 41%;
+	animation-timing-function: ease;
+	animation-duration: 1.3s;
+	animation-name: move-pet;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	width:15%;
+	animation-play-state:running;   
+}
+
+#nav-btn{
+	margin-left: 45%;
+	margin-top:10px;
+}
+#nav-btn span{
+	display: block;
+	margin-left: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#nav-btn b:nth-child(1){
+	color:red;
+	font-size: 20px;
+}
+
+#nav-btn b:nth-child(2){
+	color:rgb(130, 255, 192);
+	font-size: 20px;
+
+}
+.btn-left img,.btn-right img{
+width: 50px;
+height: 50px;
+}
+
+.btn-left,.btn-right{
+	background:transparent;
+	border:none;
+	margin-right: 10%;
+}
+
+.btn-left:hover,.btn-right:hover{
+cursor: pointer;
+}
+
+ .btn-left:active{
+	transform: translate(-20px,0);
+}
+
+.btn-right:active{
+	transform: translate(20px,0);
+} 
+
+@media only screen and (max-width: 598px) {
+	nav{
+	  display: block;
+	}
+	nav span{
+		margin-left: 15%;
+	}
+	nav span:hover{
+		border-bottom:4px solid rgb(238, 255, 0);
+	}
+  }
+
+  @media only screen and (max-width: 428px) {
+	nav{
+	  display: block;
+	}
+	nav span{
+		margin-left:10%;
+	}
+	nav span:hover{
+		border-bottom:4px solid rgb(238, 255, 0);
+	}
+
+	#nav-btn{
+		margin-left: 30%;
+	}
+	
+  }

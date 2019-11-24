@@ -1,0 +1,82 @@
+* {
+	margin: 0;
+	padding: 0;
+  }
+
+html{
+	height: 100%;
+}
+
+body{
+	background: rgb(232,175,241);
+	background: linear-gradient(143deg, rgba(232,175,241,1) 3%, rgba(253,156,255,1) 35%, rgba(239,197,252,1) 55%, rgba(125,237,229,1) 80%);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1{
+	text-align: center;
+	font-family: 'Patrick Hand', cursive;
+	font-size: calc(30px + 2vw);
+	margin-top: 20px;
+	letter-spacing: 10px;
+	display: block;
+}
+
+#choice{
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.choice-img{
+	border-radius: 50%;
+	max-width: 50%;
+	margin-left: 24%;
+}
+
+.choice-option:nth-child(1) img{
+	background-color: lightcoral;
+}
+
+.choice-option:nth-child(2) img{
+	background-color: lightblue;
+}
+
+.choice-option{
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.hover-class{
+	transition: transform 1.5s;
+	transform:rotate3d(0, 1, 0, 180deg);
+	cursor: pointer;
+}
+
+.choice-text{
+	font-size: calc(16px + 1.5vw);
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Patrick Hand', cursive;
+	width: 6ch;
+	margin-left: 38%;
+}
+
+.choice-text:hover{
+	font-size: calc(16px + 2vw);
+	color: red;
+	cursor: pointer;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+a .choice-text:hover{
+	font-size: calc(16px + 2vw);
+	color: red;
+}
+
