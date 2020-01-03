@@ -38,7 +38,7 @@ let factObj = {};
             if(choice==='dog'){
                 let tempDogArr;
                 tempDogArr = await fetch(imageUrl);
-                tempDogArr = await tempDog.json();
+                tempDogArr = await tempDogArr.json();
     
                 factObj.pictures.message  = [...factObj.pictures.message,...tempDogArr.message];
             }
@@ -120,20 +120,16 @@ let UIController = (function() {
         document.querySelector('#nav-btn b:nth-child(1)').innerHTML = currentPage;
 
         if(currentPage===1){
-            btnElement = `<button title="next"  class="btn-right" ><img src="ASSETS/icons8-right.png" data-goto="next"></button>`;
+            btnElement = `<button title="next"  class="btn-right" >&#8203;</button>`;
             navBtnElement.insertAdjacentHTML('afterbegin',btnElement);
         }
         else if(currentPage===noOfPages){
-            btnElement = ` <button title="previous"  class="btn-left" ><img src="ASSETS/icons8-left.png" data-goto="previous"></button>`;
+            btnElement = ` <button title="previous"  class="btn-left" >&#8203;</button>`;
             navBtnElement.insertAdjacentHTML('afterbegin',btnElement);
         }
         else{
-            btnElement = `<button title="previous" class="btn-left" >
-                            <img src="ASSETS/icons8-left.png" data-goto="previous">
-                          </button>
-                          <button title="next"  class="btn-right" >
-                            <img src="ASSETS/icons8-right.png" data-goto="next">
-                          </button>`;
+            btnElement = `<button title="previous" class="btn-left" >&#8203;</button>
+                          <button title="next"  class="btn-right" >&#8203;</button>`;
             navBtnElement.insertAdjacentHTML('afterbegin',btnElement);
         }
     }
@@ -167,13 +163,13 @@ let controller = (function(factCtrl,UICtrl){
 
    function setUpEventListeners(){
        document.querySelector('#btn').addEventListener('click',(event)=>{
-            if(event.target.dataset.goto==='next'){
+            if(event.target.title==='next'){
                 window.location.hash=`opt=${choice}&page=${++currentPage}`;
                 UICtrl.displayData(factArray,noOfItemsPerPage,currentPage);
                 UICtrl.displayNavButton(currentPage,noOfPages);
 
             }
-            else if(event.target.dataset.goto==='previous'){
+            else if(event.target.title==='previous'){
                 window.location.hash=`opt=${choice}&page=${--currentPage}`;
                 UICtrl.displayData(factArray,noOfItemsPerPage,currentPage);
                 UICtrl.displayNavButton(currentPage,noOfPages);

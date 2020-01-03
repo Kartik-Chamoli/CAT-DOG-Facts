@@ -181,28 +181,28 @@ h1{
 	font-size: 20px;
 
 }
-.btn-left img,.btn-right img{
-width: 50px;
-height: 50px;
+
+.btn-left{
+	background: url('ASSETS/icons8-left.png');
+}
+
+.btn-right{
+	background: url('ASSETS/icons8-right.png');
 }
 
 .btn-left,.btn-right{
-	background:transparent;
-	border:none;
-	margin-right: 10%;
+	background-size: cover;
+    background-position: center;
+    border: none;
+    margin-right: 10%;
+    width: 50px;
+    height: 50px;
 }
 
 .btn-left:hover,.btn-right:hover{
 cursor: pointer;
 }
 
- .btn-left:active{
-	transform: translate(-20px,0);
-}
-
-.btn-right:active{
-	transform: translate(20px,0);
-} 
 
 @media only screen and (max-width: 598px) {
 	nav{
