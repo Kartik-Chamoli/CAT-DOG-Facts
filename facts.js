@@ -26,7 +26,7 @@ let factObj = {};
             }
             else{
                 factsUrl = 'https://cors-anywhere.herokuapp.com/dog-api.kinduff.com/api/facts?number=100';
-                imageUrl = 'https://dog.ceo/api/breeds/image/random/100';
+                imageUrl = 'https://dog.ceo/api/breeds/image/random/50';
             }
 
             factObj.facts = await fetch(factsUrl);
@@ -34,6 +34,14 @@ let factObj = {};
             
             factObj.pictures = await fetch(imageUrl);
             factObj.pictures = await factObj.pictures.json();
+            
+            if(choice==='dog'){
+                let tempDogArr;
+                tempDogArr = await fetch(imageUrl);
+                tempDogArr = await tempDog.json();
+    
+                factObj.pictures.message  = [...factObj.pictures.message,...tempDogArr.message];
+            }
 
             if(choice === 'cat'){
                 factObj.facts=factObj.facts.data.map(function(item){
@@ -143,11 +151,12 @@ let controller = (function(factCtrl,UICtrl){
     const noOfPages = 10;
 
     async function initData(){
-        document.querySelector(`[data-goto=${choice}]`).id = "active";
         document.querySelector('nav h1').innerHTML = `${choice} FACTS`
         UICtrl.setLoaderImage(choice);
         factArray = await factCtrl.apiData(choice);
         UICtrl.removeLoader();
+        document.querySelector(`[data-goto=${choice}]`).id = "active";
+
    }
   
     function renderUI(){
