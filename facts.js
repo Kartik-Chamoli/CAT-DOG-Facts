@@ -25,7 +25,7 @@ let factObj = {};
                 imageUrl = 'https://api.thecatapi.com/v1/images/search?limit=100&size=medium&format=json&mime_types=png';
             }
             else{
-                factsUrl = 'https://cors-anywhere.herokuapp.com/dog-api.kinduff.com/api/facts?number=100';
+                factsUrl = 'https://api.allorigins.win/raw?url=https://dog-api.kinduff.com/api/facts?number=100';
                 imageUrl = 'https://dog.ceo/api/breeds/image/random/50';
             }
 
